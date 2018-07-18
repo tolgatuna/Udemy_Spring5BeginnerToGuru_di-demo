@@ -1,17 +1,23 @@
 package guru.springframework.controllers;
 
-import guru.springframework.services.GreetingServiceImpl;
+import guru.springframework.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class PropertyInjectedController {
 
-    // Hard Class Name !
+//    // Hard Class Name !
+//    @Autowired
+//    @Qualifier("greetingServiceImpl")
+//    public GreetingService greetingService;
+
+    // ALSO IF NAME IS SAME WITH IMPLEMENTED CLASS, THAT WILL BE OK!
     @Autowired
-    public GreetingServiceImpl greetingService;
+    public GreetingService greetingServiceImpl;
 
     public String sayHello() {
-        return greetingService.sayGreeting();
+        return greetingServiceImpl.sayGreeting();
     }
 }
