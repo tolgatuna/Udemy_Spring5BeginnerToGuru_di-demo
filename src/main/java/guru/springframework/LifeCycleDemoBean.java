@@ -30,7 +30,7 @@ public class LifeCycleDemoBean implements InitializingBean, DisposableBean, Bean
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         System.out.println("## Bean Factory has been set");
     }
-
+ 
     @Override
     public void setBeanName(String s) {
         System.out.println("## My Bean Name is : " + s);
