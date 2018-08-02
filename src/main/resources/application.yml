@@ -6,3 +6,13 @@ guru:
   username: Some User
   password: Some Normal Password
   dburl: Some Another Url
+
+---  # FILE SEPARATOR!
+spring:
+  profiles: de
+
+guru:
+  jms:
+    username: GERMAN JMS USER
+    password: GERMAN JMS somepass
+    url: GERMAN URL

@@ -57,7 +57,7 @@ public class PropertyConfig {
     public FakeJmsBroker fakeJmsBroker() {
         FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
         fakeJmsBroker.setUserName(jmsUserName);
-        fakeJmsBroker.setPassword(password);
+        fakeJmsBroker.setPassword(jmsPassword);
         fakeJmsBroker.setUrl(jmsUrl);
         return fakeJmsBroker;
     }
