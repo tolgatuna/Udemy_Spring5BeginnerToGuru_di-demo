@@ -1,0 +1,38 @@
+# this is a comment
+
+name: Johm
+
+names: # Inline comment
+  - John
+  - Pual
+  - Ringo
+
+pound_sing: "#"
+
+book:
+  author: Joe Buck
+  publisher: random house
+
+# ALL THESE BOOLEAN
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+false: no #No, false, FALSE, False
+
+string_val: "This is it's quote"
+
+colon_string: "my courses: one two three"
+
+include_new_lines: |
+  asasdadsadsad dsa dsa das
+  dsadsa dsa dsa das
+  dsfl dıu oıo
+
+ignore_new_lines: >
+  this is
+  just one
+  line string
+
