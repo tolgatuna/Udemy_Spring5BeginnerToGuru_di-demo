@@ -1,0 +1,8 @@
+guru:
+  jms:
+    username: JMS USER
+    password: somepass
+    url: SomeURL
+  username: Some User
+  password: Some Normal Password
+  dburl: Some Another Url
