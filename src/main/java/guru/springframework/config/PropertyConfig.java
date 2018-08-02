@@ -13,14 +13,15 @@ import org.springframework.core.env.Environment;
 
 @Configuration
 //@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"}) // ONE WAY TO ADD MULTIPLE PROPERTY FILES
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})  // SECOND WAY TO ADD MULTIPLE PROPERTY FILES
+//@PropertySources({
+//        @PropertySource("classpath:datasource.properties"),
+//        @PropertySource("classpath:jms.properties")
+//})  // SECOND WAY TO ADD MULTIPLE PROPERTY FILES
+// We will use
 public class PropertyConfig {
 
-    @Autowired
-    Environment environment;
+//    @Autowired
+//    Environment environment;
 
     @Value("${guru.username}")
     String user;
@@ -45,7 +46,8 @@ public class PropertyConfig {
         FakeDataSource fakeDataSource = new FakeDataSource();
         /*fakeDataSource.setUser(user);*/
         // Open Run/Debug Configuration -> Set a override parameter with name GURU_USERNAME.
-        fakeDataSource.setUser(environment.getProperty("GURU_USERNAME"));
+        //fakeDataSource.setUser(environment.getProperty("GURU_USERNAME"));
+        fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
         return fakeDataSource;
@@ -60,10 +62,11 @@ public class PropertyConfig {
         return fakeJmsBroker;
     }
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer properties() {
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-        return propertySourcesPlaceholderConfigurer;
-    }
+    // NO NEED FOR DEFAULT application.properties
+//    @Bean
+//    public static PropertySourcesPlaceholderConfigurer properties() {
+//        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+//        return propertySourcesPlaceholderConfigurer;
+//    }
 
 }
